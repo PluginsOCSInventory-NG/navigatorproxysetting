@@ -1,0 +1,10 @@
+{
+  "displayName" : "Navigator proxy setting",
+  "author" : ["Valentin DEVILLE"],
+  "contributor" : [],
+  "supportedAgent" : ["Windows"],
+  "description" : {
+    "fr" : "Remonte le proxy dev navigateurs",
+    "en" : "Retrieve navigator proxy"
+  }
+}
