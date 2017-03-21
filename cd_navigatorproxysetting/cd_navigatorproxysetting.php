@@ -32,7 +32,9 @@ else{
     echo open_form($form_name);
 	$list_fields = array(
         'Enable' => 'ENABLE',
-        'Server / IP : PORT ' => 'ADDRESS'
+        'Server / IP : PORT ' => 'ADDRESS',
+        'AutoConfig URL ' => 'AUTOCONFIGURL',
+        'Exceptions ' => 'OVERRIDE'
     );
     $list_col_cant_del=$list_fields;
     $default_fields= $list_fields;

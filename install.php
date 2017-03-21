@@ -2,7 +2,7 @@
 function plugin_version_navigatorproxysetting()
 {
 return array('name' => 'navigatorproxysetting',
-'version' => '1.0',
+'version' => '1.1',
 'author'=> 'Valentin DEVILLE',
 'license' => 'GPLv2',
 'verMinOcs' => '2.2');
@@ -18,6 +18,8 @@ $object -> sql_query("CREATE TABLE IF NOT EXISTS `navigatorproxysetting` (
                       `HARDWARE_ID` INT(11) NOT NULL,
                       `ENABLE` VARCHAR(255) DEFAULT NULL,
                       `ADDRESS` VARCHAR(255) DEFAULT NULL,
+                      `AUTOCONFIGURL` VARCHAR(255) DEFAULT NULL,
+                      `OVERRIDE` VARCHAR(255) DEFAULT NULL,
                       PRIMARY KEY  (`ID`,`HARDWARE_ID`)
                       ) ENGINE=INNODB;");
 
