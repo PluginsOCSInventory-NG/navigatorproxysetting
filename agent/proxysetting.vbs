@@ -52,6 +52,7 @@ if bExists=vbFalse then
     autoConfigURL = "None"
 end if
 
+on error resume next
 proxyOverride = shell.RegRead(proxyOverrideKey)
 
 Wscript.Echo "<NAVIGATORPROXYSETTING>"
