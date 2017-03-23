@@ -15,6 +15,7 @@ $DATA_MAP{navigatorproxysetting} = {
 		writeDiff => 0,
 		cache => 0,
 		fields => {
+                USER => {},
                 ENABLE => {},
                 ADDRESS => {},
                 AUTOCONFIGURL => {},

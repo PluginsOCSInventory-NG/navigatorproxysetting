@@ -16,6 +16,7 @@ $object -> add_cd_entry("navigatorproxysetting","other");
 $object -> sql_query("CREATE TABLE IF NOT EXISTS `navigatorproxysetting` (
                       `ID` INT(11) NOT NULL AUTO_INCREMENT,
                       `HARDWARE_ID` INT(11) NOT NULL,
+                      `USER` VARCHAR(255) DEFAULT NULL,
                       `ENABLE` VARCHAR(255) DEFAULT NULL,
                       `ADDRESS` VARCHAR(255) DEFAULT NULL,
                       `AUTOCONFIGURL` VARCHAR(255) DEFAULT NULL,
