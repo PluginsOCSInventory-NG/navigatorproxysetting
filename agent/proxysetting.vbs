@@ -5,7 +5,7 @@ strComputer = "."
 PUBLIC strUsers, UserName
 
 Function StripAccents(str)
-	accent   = "»… À€ŸœŒ¿¬‘÷«ËÈÍÎ˚˘ÔÓ‡‚ÙˆÁ"
+	accent   = "√à√â√ä√ã√õ√ô√è√é√Ä√Ç√î√ñ√á√®√©√™√´√ª√π√Ø√Æ√†√¢√¥√∂√ß"
 	noaccent = "EEEEUUIIAAOOCeeeeuuiiaaooc"
 	currentChar = ""
 	result = ""
@@ -99,13 +99,14 @@ For Each key In arrKeys
          on error resume next
          proxyOverride = shell.RegRead(proxyOverrideKey)
 
-         Wscript.Echo "<NAVIGATORPROXYSETTING>"
-         Wscript.Echo "<USER>" & StripAccents(UserName) & "</USER>"
-         Wscript.Echo "<ENABLE>" & proxyEnable & "</ENABLE>"
-         Wscript.Echo "<AUTOCONFIGURL>" & autoConfigURL & "</AUTOCONFIGURL>"
-         Wscript.Echo "<ADDRESS>" & proxyServer & "</ADDRESS>"
-         Wscript.Echo "<OVERRIDE>" & proxyOverride & "</OVERRIDE>"
-         Wscript.Echo "</NAVIGATORPROXYSETTING>"
+         Wscript.Echo _
+			"<NAVIGATORPROXYSETTING>" & VbCrLf &_
+			"<USER>" & StripAccents(UserName) & "</USER>" & VbCrLf &_
+			"<ENABLE>" & proxyEnable & "</ENABLE>" & VbCrLf &_
+			"<AUTOCONFIGURL>" & autoConfigURL & "</AUTOCONFIGURL>" & VbCrLf &_
+			"<ADDRESS>" & proxyServer & "</ADDRESS>" & VbCrLf &_
+			"<OVERRIDE>" & proxyOverride & "</OVERRIDE>" & VbCrLf &_
+			"</NAVIGATORPROXYSETTING>"
       End If
    End If
 Next
