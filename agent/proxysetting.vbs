@@ -1,11 +1,26 @@
-'Author: Valentin DEVILLE & MTeck (Stackoverflow)
+'----------------------------------------------------------
+' Plugin for OCS Inventory NG 2.x
+' Script :		Navigator proxy settings
+' Version :		1.00
+' Date :		27/03/2017
+' Authors :		Valentin DEVILLE & MTeck (Stackoverflow)
+'----------------------------------------------------------
+' OS checked [X] on		32b	64b	(Professionnal edition)
+'	Windows XP		[X]	[ ]
+'	Windows 7		[X]	[X]
+'	Windows 8.1		[X]	[X]	
+'	Windows 10		[X]	[X]
+' ---------------------------------------------------------
+' NOTE : No checked on Windows Vista and Windows 8
+' ---------------------------------------------------------
+On Error Resume Next
 
 const HKEY_USERS = &H80000003
 strComputer = "."
 PUBLIC strUsers, UserName
 
 Function StripAccents(str)
-	accent   = "√à√â√ä√ã√õ√ô√è√é√Ä√Ç√î√ñ√á√®√©√™√´√ª√π√Ø√Æ√†√¢√¥√∂√ß"
+	accent   = "»… À€ŸœŒ¿¬‘÷«ËÈÍÎ˚˘ÔÓ‡‚ÙˆÁ"
 	noaccent = "EEEEUUIIAAOOCeeeeuuiiaaooc"
 	currentChar = ""
 	result = ""
@@ -99,14 +114,13 @@ For Each key In arrKeys
          on error resume next
          proxyOverride = shell.RegRead(proxyOverrideKey)
 
-         Wscript.Echo _
-			"<NAVIGATORPROXYSETTING>" & VbCrLf &_
-			"<USER>" & StripAccents(UserName) & "</USER>" & VbCrLf &_
-			"<ENABLE>" & proxyEnable & "</ENABLE>" & VbCrLf &_
-			"<AUTOCONFIGURL>" & autoConfigURL & "</AUTOCONFIGURL>" & VbCrLf &_
-			"<ADDRESS>" & proxyServer & "</ADDRESS>" & VbCrLf &_
-			"<OVERRIDE>" & proxyOverride & "</OVERRIDE>" & VbCrLf &_
-			"</NAVIGATORPROXYSETTING>"
+         Wscript.Echo "<NAVIGATORPROXYSETTING>"
+         Wscript.Echo "<USER>" & StripAccents(UserName) & "</USER>"
+         Wscript.Echo "<ENABLE>" & proxyEnable & "</ENABLE>"
+         Wscript.Echo "<AUTOCONFIGURL>" & autoConfigURL & "</AUTOCONFIGURL>"
+         Wscript.Echo "<ADDRESS>" & proxyServer & "</ADDRESS>"
+         Wscript.Echo "<OVERRIDE>" & proxyOverride & "</OVERRIDE>"
+         Wscript.Echo "</NAVIGATORPROXYSETTING>"
       End If
    End If
 Next
