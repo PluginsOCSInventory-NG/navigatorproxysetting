@@ -6,12 +6,13 @@
 ' Authors :		Valentin DEVILLE & MTeck (Stackoverflow)
 '----------------------------------------------------------
 ' OS checked [X] on	32b	64b	(Professionnal edition)
-'	Windows XP		[X]	[ ]
-'	Windows 7		[X]	[X]
-'	Windows 8.1		[X]	[X]	
-'	Windows 10		[X]	[X]
+'	Windows XP	[X]	[ ]
+'	Windows Vista	[X]	[X]
+'	Windows 7	[X]	[X]
+'	Windows 8.1	[X]	[X]	
+'	Windows 10	[X]	[X]
 ' ---------------------------------------------------------
-' NOTE : No checked on Windows Vista and Windows 8
+' NOTE : No checked on Windows 8
 ' ---------------------------------------------------------
 On Error Resume Next
 
@@ -20,7 +21,7 @@ strComputer = "."
 PUBLIC strUsers, UserName
 
 Function StripAccents(str)
-	accent   = "»… À€ŸœŒ¿¬‘÷«ËÈÍÎ˚˘ÔÓ‡‚ÙˆÁ"
+	accent   = "√à√â√ä√ã√õ√ô√è√é√Ä√Ç√î√ñ√á√®√©√™√´√ª√π√Ø√Æ√†√¢√¥√∂√ß"
 	noaccent = "EEEEUUIIAAOOCeeeeuuiiaaooc"
 	currentChar = ""
 	result = ""
