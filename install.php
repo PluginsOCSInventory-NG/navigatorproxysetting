@@ -2,7 +2,7 @@
 function plugin_version_navigatorproxysetting()
 {
 return array('name' => 'navigatorproxysetting',
-'version' => '1.1',
+'version' => '1.2',
 'author'=> 'Valentin DEVILLE',
 'license' => 'GPLv2',
 'verMinOcs' => '2.2');
