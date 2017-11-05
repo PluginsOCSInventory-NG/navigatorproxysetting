@@ -1,16 +1,17 @@
 '----------------------------------------------------------
 ' Plugin for OCS Inventory NG 2.x
 ' Script :		Navigator proxy settings
-' Version :		1.00
-' Date :		27/03/2017
+' Version :		1.01
+' Date :		05/11/2017
 ' Authors :		Valentin DEVILLE & MTeck (Stackoverflow)
+' Contributor :	StÈphane PAUTREL (acb78.com)
 '----------------------------------------------------------
 ' OS checked [X] on	32b	64b	(Professionnal edition)
-'	Windows XP	[X]
+'	Windows XP		[X]
 '	Windows Vista	[X]	[X]
-'	Windows 7	[X]	[X]
-'	Windows 8.1	[X]	[X]	
-'	Windows 10	[X]	[X]
+'	Windows 7		[X]	[X]
+'	Windows 8.1		[X]	[X]	
+'	Windows 10		[X]	[X]
 '	Windows 2k8R2		[X]
 '	Windows 2k12R2		[X]
 '	Windows 2k16		[X]
@@ -24,7 +25,7 @@ strComputer = "."
 PUBLIC strUsers, UserName
 
 Function StripAccents(str)
-	accent   = "√à√â√ä√ã√õ√ô√è√é√Ä√Ç√î√ñ√á√®√©√™√´√ª√π√Ø√Æ√†√¢√¥√∂√ß"
+	accent   = "»… À€ŸœŒ¿¬‘÷«ËÈÍÎ˚˘ÔÓ‡‚ÙˆÁ"
 	noaccent = "EEEEUUIIAAOOCeeeeuuiiaaooc"
 	currentChar = ""
 	result = ""
