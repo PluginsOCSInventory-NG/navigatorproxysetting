@@ -1,35 +1,37 @@
 <?php
-function plugin_version_navigatorproxysetting()
+
+/**
+ * This function is called on installation and is used to create database schema for the plugin
+ */
+function extension_install_navigatorproxysetting()
 {
-return array('name' => 'navigatorproxysetting',
-'version' => '1.2',
-'author'=> 'Valentin DEVILLE',
-'license' => 'GPLv2',
-'verMinOcs' => '2.2');
+    $commonObject = new ExtensionCommon;
+
+    $commonObject -> sqlQuery("CREATE TABLE IF NOT EXISTS `navigatorproxysetting` (
+                              `ID` INT(11) NOT NULL AUTO_INCREMENT,
+                              `HARDWARE_ID` INT(11) NOT NULL,
+                              `USER` VARCHAR(255) DEFAULT NULL,
+                              `ENABLE` VARCHAR(255) DEFAULT NULL,
+                              `ADDRESS` VARCHAR(255) DEFAULT NULL,
+                              `AUTOCONFIGURL` VARCHAR(255) DEFAULT NULL,
+                              `OVERRIDE` VARCHAR(255) DEFAULT NULL,
+                              PRIMARY KEY  (`ID`,`HARDWARE_ID`)
+                              ) ENGINE=INNODB;");
 }
 
-function plugin_init_navigatorproxysetting()
+/**
+ * This function is called on removal and is used to destroy database schema for the plugin
+ */
+function extension_delete_navigatorproxysetting()
 {
-$object = new plugins;
-$object -> add_cd_entry("navigatorproxysetting","other");
-
-$object -> sql_query("CREATE TABLE IF NOT EXISTS `navigatorproxysetting` (
-                      `ID` INT(11) NOT NULL AUTO_INCREMENT,
-                      `HARDWARE_ID` INT(11) NOT NULL,
-                      `USER` VARCHAR(255) DEFAULT NULL,
-                      `ENABLE` VARCHAR(255) DEFAULT NULL,
-                      `ADDRESS` VARCHAR(255) DEFAULT NULL,
-                      `AUTOCONFIGURL` VARCHAR(255) DEFAULT NULL,
-                      `OVERRIDE` VARCHAR(255) DEFAULT NULL,
-                      PRIMARY KEY  (`ID`,`HARDWARE_ID`)
-                      ) ENGINE=INNODB;");
-
+    $commonObject = new ExtensionCommon;
+    $commonObject -> sqlQuery("DROP TABLE `navigatorproxysetting`");
 }
 
-function plugin_delete_navigatorproxysetting()
+/**
+ * This function is called on plugin upgrade
+ */
+function extension_upgrade_navigatorproxysetting()
 {
-$object = new plugins;
-$object -> del_cd_entry("navigatorproxysetting");
-$object -> sql_query("DROP TABLE `navigatorproxysetting`");
 
 }
